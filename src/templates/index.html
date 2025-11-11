@@ -17,5 +17,19 @@
       Nollaa
     </button>
   </form>
+  <form id="set-counter-form" method="POST" onsubmit="return submitSetCounter(event)">
+    <label for="counter-value">Aseta laskuri (kokonaisluku):</label>
+    <input id="counter-value" name="value" type="number" min="0" step="1" placeholder="esim. 5" required>
+    <button type="submit">Aseta</button>
+  </form>
+  <script>
+    function submitSetCounter(event) {
+      event.preventDefault();
+      const newValue = document.getElementById('counter-value').value;
+      fetch(`/set/${newValue}`, { method: 'POST' })
+        .then(() => window.location.reload());
+      return false;
+    }
+  </script> 
 </body>
 </html>
