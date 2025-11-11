@@ -1,0 +1,15 @@
+*** Settings ***
+Resource  resource.robot
+Suite Setup  Open And Configure Browser
+Suite Teardown  Close Browser
+
+*** Test Cases ***
+When button pressed four times and set to 3 the counter is 3
+    Go To  ${HOME_URL}
+    Click Button  Paina
+    Click Button  Paina
+    Click Button  Paina
+    Click Button  Paina
+    Input Text   counter-value  3
+    Click Button  Aseta
+    Page Should Contain  nappia painettu 3 kertaa
