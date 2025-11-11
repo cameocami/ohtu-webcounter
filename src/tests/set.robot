@@ -2,6 +2,7 @@
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
+Test Setup  Set Counter To Zero
 
 *** Test Cases ***
 When button pressed four times and set to 3 the counter is 3

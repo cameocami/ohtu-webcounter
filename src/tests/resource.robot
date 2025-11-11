@@ -24,3 +24,8 @@ Open And Configure Browser
         Set Selenium Speed  ${DELAY}
     END
     Open Browser  browser=${BROWSER}  options=${options}
+
+Set Counter To Zero
+    Go To  ${HOME_URL}
+    Click Button  Nollaa
+    Page Should Contain  nappia painettu 0 kertaa
